@@ -26,3 +26,18 @@ class ClientsList:
             if self.clients[i]["pesel"] == pesel:
                 self.clients[i]["is_active"] = False
                 break
+
+    def __iter__(self):
+        self.__c_iter = iter(self.clients)
+        return self
+
+    def __next__(self):
+        while True:
+            client = next(self.__c_iter)
+            if client["is_active"]:
+                return client["pesel"]
+
+
+
+
+

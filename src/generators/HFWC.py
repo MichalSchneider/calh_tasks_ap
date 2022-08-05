@@ -8,4 +8,7 @@ funkcji na przykład:
 
 
 def even_numbers(n):
-    pass
+
+    for number in range(n+1):
+        if number > 0 and number % 2 == 0 and number % 3 != 0:
+            yield
